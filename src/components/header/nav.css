@@ -1,0 +1,33 @@
+:root{
+    --black-color- : #211f1f;
+
+}
+
+.navigation {
+    background-color: var(--black-color-);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+nav a:first-child {
+    margin-left: 2vw;
+
+}   
+
+a {
+    
+    color: white;
+    text-decoration: none;
+    padding: 6%;
+}
+
+.active {
+    background-color: goldenrod;
+}
+
+
+a:hover{
+    background-color: rgb(251, 218, 134);
+}

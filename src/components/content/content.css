@@ -1,0 +1,25 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.column {
+    display: inline-block;
+}
+
+.card {
+    background-color: whitesmoke;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    
+}
+
+.card p button {
+    width: 100%;
+    color: white;
+    background-color: #211f1f;
+}
