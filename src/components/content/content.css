@@ -1,0 +1,56 @@
+.container {
+  padding-bottom: 4rem;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem;
+  vertical-align: baseline;
+  padding: 1rem 2rem;
+}
+
+.card {
+  position: relative;
+  display: relative;
+  text-align: center;
+}
+
+.card-list:is(.dark) .card {
+  background-color: #151515;
+  color: #d5d5d5;
+}
+.card-list:is(.light) .card {
+  background-color: whitesmoke;
+  color: #151515;
+}
+
+.card img {
+  position: relative;
+  aspect-ratio: 5/7;
+  width: 100%;
+  object-fit: fill;
+  margin: 0;
+}
+
+.card-list:is(.light) .detail-btn {
+  border: none;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  padding: 0;
+  width: 100%;
+  color: #d5d5d5;
+  background-color: #222;
+}
+
+.card-list:is(.dark) .detail-btn {
+  border: none;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  padding: 0;
+  width: 100%;
+  color: #151515;
+  background-color: whitesmoke;
+}

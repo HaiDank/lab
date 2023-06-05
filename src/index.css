@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 100ms;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+.light {
+  color: #111;
+  background-color: #eee;
+}
+
+.dark {
+  color: #eee;
+  background-color: #222;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a {
+  width: 100%;
+  height: auto;
+}
