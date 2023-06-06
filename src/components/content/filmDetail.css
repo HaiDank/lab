@@ -1,0 +1,46 @@
+.film-detail {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.2)
+  );
+}
+
+.iframe-container {
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.iframe-container .film-trailer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.film-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: white;
+  padding-left: 1rem;
+}
+
+.play-btn {
+  position: absolute;
+  bottom: 10%;
+  left: 65%;
+  aspect-ratio: 1/1;
+}

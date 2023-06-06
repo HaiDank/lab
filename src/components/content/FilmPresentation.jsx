@@ -1,38 +1,65 @@
 import React from "react";
 import "./content.css";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useContext } from "react";
 import { ThemeContext } from "../../shared/ThemeContext";
-import { Button, Card, Typography } from "@mui/material";
+import { Box, ButtonBase, Card, Typography } from "@mui/material";
+import FilmDetail from "./FilmDetail";
 
 function FilmPresentation({ films }) {
   const [openModal, setOpenModal] = useState(false);
   const [filmDetail, setFilmDetail] = useState();
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
+
+  const handleClick = () => {
+    setOpenModal(true);
+    console.log(filmDetail);
+  };
+
+  const handleClose = () => {
+    setOpenModal(false);
+  };
 
   return (
     <div className='container'>
       <div className={"card-list " + theme}>
         {films.map((film) => (
           <Card className='card' key={film.id}>
-            <img src={film.img} />
-            <Typography mb={5} variant='h5'>
+            <ButtonBase
+              sx={{ borderRadius: "0.5rem" }}
+              onClick={() => {
+                handleClick(), setFilmDetail(film);
+              }}
+            >
+              <img src={film.img} />
+              <Box className='film-title'>
+                <Typography variant='h5'>{film.title}</Typography>
+              </Box>
+            </ButtonBase>
+
+            {/* <Typography mb={5} variant='h5'>
               {film.title}
             </Typography>
 
-            <Button selected variant='contained' className='detail-btn'>
-              <Link to='/detail'>Detail</Link>
-            </Button>
+            <Button selected variant='contained' className='Id-btn'>
+              <Link to='/Id'>Id</Link>
+            </Button> */}
 
-            {/* <button className='detail-btn' onClick={}>
-              <Link>Detail</Link>
+            {/* <button className='Id-btn' onClick={}>
+              <Link>Id</Link>
             </button> */}
             {/* <p>Year: {film.year}</p>
             <p>Nation: {film.nation}</p> */}
           </Card>
         ))}
       </div>
+      {openModal && (
+        <FilmDetail
+          open={openModal}
+          filmDetail={filmDetail}
+          onClose={handleClose}
+        />
+      )}
     </div>
   );
 }

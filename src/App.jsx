@@ -7,6 +7,8 @@ import "./index.css";
 import FilmDetail from "./components/content/FilmDetail";
 import Contact from "./components/content/Contact";
 import { ThemeContext } from "./shared/ThemeContext";
+import News from "./components/content/News";
+import About from "./components/content/About";
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -18,6 +20,8 @@ function App() {
         <Route path='/' element={<Content />}></Route>
         <Route path='/detail/:id' element={<FilmDetail />}></Route>
         <Route path='/contact' element={<Contact />}></Route>
+        <Route path='/news' element={<News />}></Route>
+        <Route path='/about' element={<About />}></Route>
       </Routes>
 
       <Footer />

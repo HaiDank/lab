@@ -9,6 +9,8 @@ body {
   min-height: 100vh;
   margin: 0;
   position: relative;
+  padding: 0;
+  transition-duration: 0ms;
 }
 
 .light {
