@@ -1,16 +1,20 @@
 * {
-  box-sizing: border-box;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 100ms;
+  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
+    sans-serif;
 }
 
 body {
+  box-sizing: content-box;
   min-height: 100vh;
+  min-width: 100vw;
   margin: 0;
   position: relative;
   padding: 0;
   transition-duration: 0ms;
+  overflow-x: hidden;
 }
 
 .light {

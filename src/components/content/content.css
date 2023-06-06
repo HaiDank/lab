@@ -28,7 +28,6 @@
 }
 
 .card::after {
-  display: inline-block;
   position: absolute;
   content: "";
   height: 30%;
@@ -62,7 +61,6 @@
   width: 100%;
   object-fit: cover;
   margin: 0;
-  border-radius: 0.5rem;
   /* margin-bottom: 0.75em; */
   /* box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4); */
 }

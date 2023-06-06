@@ -26,7 +26,7 @@ function FilmPresentation({ films }) {
         {films.map((film) => (
           <Card className='card' key={film.id}>
             <ButtonBase
-              sx={{ borderRadius: "0.5rem" }}
+              sx={{ borderRadius: "0.5rem", overflow: "hidden" }}
               onClick={() => {
                 handleClick(), setFilmDetail(film);
               }}

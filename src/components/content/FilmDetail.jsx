@@ -1,4 +1,11 @@
-import { Box, Dialog, IconButton, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Dialog,
+  DialogContent,
+  IconButton,
+  Stack,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import "./filmDetail.css";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
@@ -10,15 +17,53 @@ function FilmDetail({ open, filmDetail, onClose }) {
         open={open}
         onClose={onClose}
         fullWidth
+        maxWidth='md'
+        scroll='body'
+        // sx={{ overflowY: "scroll" }}
         PaperProps={{
-          style: {
-            backgroundColor: "transparent",
-            boxShadow: "none",
+          sx: {
+            backgroundColor: "#121212",
+            margin: "0",
+            top: "1em",
+            width: "100%",
+            maxHeight: "200%",
+            height: "fit-content",
+            boxSizing: "content-box",
           },
         }}
       >
-        <div className='film-detail'>
-          <div className='iframe-container'>
+        <DialogContent
+          sx={{
+            display: "block",
+            width: "100%",
+            height: "auto",
+            padding: "0",
+            overflowY: "visible",
+          }}
+        >
+          <Box
+            className='iframe-container'
+            sx={{
+              aspectRatio: "16/9",
+              position: "relative",
+              width: "100%",
+              height: "auto",
+            }}
+          >
+            <div className='film-title'>
+              <Typography
+                variant='h3'
+                color='white'
+                sx={{
+                  position: "absolute",
+                  bottom: "30%",
+                  left: "7%",
+                }}
+              >
+                {filmDetail.title}
+              </Typography>
+            </div>
+
             <iframe
               className='film-trailer'
               src={filmDetail.trailer}
@@ -26,7 +71,7 @@ function FilmDetail({ open, filmDetail, onClose }) {
               frameborder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
             />
-          </div>
+          </Box>
 
           {/* <IconButton className='play-btn'>
             <PlayCircleOutlineIcon
@@ -35,12 +80,17 @@ function FilmDetail({ open, filmDetail, onClose }) {
             />
           </IconButton> */}
 
-          <Stack className='film-info'>
-            <Typography variant='h5'>{filmDetail.title}</Typography>
+          <Box className='film-info'>
             <p>Year: {filmDetail.year}</p>
             <p>Nation: {filmDetail.nation}</p>
-          </Stack>
-        </div>
+            <p>Nation: {filmDetail.nation}</p>
+            <p>Nation: {filmDetail.nation}</p>
+            <p>Nation: {filmDetail.nation}</p>
+            <p>Nation: {filmDetail.nation}</p>
+            <p>Nation: {filmDetail.nation}</p>
+            <p>Nation: {filmDetail.nation}</p>
+          </Box>
+        </DialogContent>
       </Dialog>
     </>
   );
