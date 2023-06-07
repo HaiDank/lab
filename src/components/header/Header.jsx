@@ -5,12 +5,15 @@ import {
   AppBar,
   Box,
   Button,
-  Divider,
-  FormControlLabel,
+  Icon,
   Stack,
   Switch,
   Toolbar,
+  Typography,
 } from "@mui/material";
+import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import { ThemeContext } from "../../shared/ThemeContext";
 function Header() {
   const { isDark, theme, toggleTheme } = useContext(ThemeContext);
@@ -22,20 +25,26 @@ function Header() {
   return (
     <>
       <AppBar position='static'>
-        <Toolbar className={"nav " + theme}>
-          <Button color='inherit' sx={{ pr: "2rem" }}>
-            <Link to='/' className='site-title'>
-              Lab4
+        <Toolbar className={theme}>
+          <Button color='inherit' sx={{ justifyContent: "start" }}>
+            <Link to='/'>
+              <Typography component='div' variant='h3'>
+                Lab 4
+              </Typography>
             </Link>
           </Button>
+          <Box sx={{ flexGrow: "1" }} />
           <Stack direction='row' spacing={2} sx={{ width: "auto" }}>
             <Button color='inherit'>
-              <Link to='/about'>About</Link>
+              <InfoOutlinedIcon />
+              <Link to='/about'> About</Link>
             </Button>
             <Button color='inherit'>
+              <ContactPageOutlinedIcon />
               <Link to='/contact'>Contact</Link>
             </Button>
             <Button color='inherit'>
+              <ArticleOutlinedIcon />
               <Link to='/news'>News</Link>
             </Button>
             <Switch

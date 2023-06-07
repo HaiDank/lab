@@ -34,8 +34,3 @@ a {
 a:visited {
   color: inherit;
 }
-
-a {
-  width: 100%;
-  height: auto;
-}
