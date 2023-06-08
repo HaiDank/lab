@@ -1,10 +1,7 @@
 .footer {
-  position: absolute;
-  bottom: 0%;
+  position: sticky;
+  top: 100%;
   width: 100%;
-}
-
-.footer p {
   margin: 0;
   text-align: center;
   padding-bottom: 1rem;

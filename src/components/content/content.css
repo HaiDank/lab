@@ -1,14 +1,9 @@
-.container {
-  padding-bottom: 4rem;
-  padding-top: 1rem;
-}
-
 .card-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   vertical-align: baseline;
-  padding: 1rem 3rem;
+  padding: 1rem 0;
 }
 
 .card {
@@ -62,7 +57,7 @@
   object-fit: cover;
   margin: 0;
   /* margin-bottom: 0.75em; */
-  /* box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4); */
+  box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
 }
 
 .card .film-title {

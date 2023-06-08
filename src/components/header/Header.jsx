@@ -24,7 +24,10 @@ function Header() {
 
   return (
     <>
-      <AppBar position='static'>
+      <AppBar
+        position='static'
+        sx={{ boxShadow: "none", marginBottom: "1rem" }}
+      >
         <Toolbar className={theme}>
           <Button color='inherit' sx={{ justifyContent: "start" }}>
             <Link to='/'>

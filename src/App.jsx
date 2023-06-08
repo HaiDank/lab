@@ -18,7 +18,6 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Content />}></Route>
-        <Route path='/detail/:id' element={<FilmDetail />}></Route>
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/news' element={<News />}></Route>
         <Route path='/about' element={<About />}></Route>

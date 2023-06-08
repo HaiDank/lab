@@ -3,7 +3,14 @@ import "./content.css";
 import { useState } from "react";
 import { useContext } from "react";
 import { ThemeContext } from "../../shared/ThemeContext";
-import { Box, ButtonBase, Card, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardActionArea,
+  CardMedia,
+  Container,
+  Typography,
+} from "@mui/material";
 import FilmDetail from "./FilmDetail";
 
 function FilmPresentation({ films }) {
@@ -21,38 +28,23 @@ function FilmPresentation({ films }) {
   };
 
   return (
-    <div className='container'>
-      <div className={"card-list " + theme}>
+    <Container>
+      <Box className={"card-list " + theme}>
         {films.map((film) => (
           <Card className='card' key={film.id}>
-            <ButtonBase
-              sx={{ borderRadius: "0.5rem", overflow: "hidden" }}
+            <CardActionArea
               onClick={() => {
                 handleClick(), setFilmDetail(film);
               }}
             >
-              <img src={film.img} />
+              <CardMedia component='img' image={film.img} />
               <Box className='film-title'>
                 <Typography variant='h5'>{film.title}</Typography>
               </Box>
-            </ButtonBase>
-
-            {/* <Typography mb={5} variant='h5'>
-              {film.title}
-            </Typography>
-
-            <Button selected variant='contained' className='Id-btn'>
-              <Link to='/Id'>Id</Link>
-            </Button> */}
-
-            {/* <button className='Id-btn' onClick={}>
-              <Link>Id</Link>
-            </button> */}
-            {/* <p>Year: {film.year}</p>
-            <p>Nation: {film.nation}</p> */}
+            </CardActionArea>
           </Card>
         ))}
-      </div>
+      </Box>
       {openModal && (
         <FilmDetail
           open={openModal}
@@ -60,7 +52,7 @@ function FilmPresentation({ films }) {
           onClose={handleClose}
         />
       )}
-    </div>
+    </Container>
   );
 }
 

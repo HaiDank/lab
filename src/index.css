@@ -16,7 +16,10 @@ body {
   transition-duration: 0ms;
   overflow-x: hidden;
 }
-
+#root,
+.body {
+  min-height: 100vh;
+}
 .light {
   color: #111;
   background-color: #eee;

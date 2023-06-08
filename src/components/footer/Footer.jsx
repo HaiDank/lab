@@ -1,14 +1,15 @@
 import React from "react";
 import "./footer.css";
+import { Typography } from "@mui/material";
 
 function Footer() {
   return (
-    <div className='footer'>
+    <footer className='footer'>
       <hr />
-      <p>
-        copyright <span>&copy;</span> 2022
-      </p>
-    </div>
+      <Typography variant='subtitle2' m='auto'>
+        copyright <span>&copy;</span> 2023
+      </Typography>
+    </footer>
   );
 }
 
