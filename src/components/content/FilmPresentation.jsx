@@ -9,6 +9,7 @@ import {
   CardActionArea,
   CardMedia,
   Container,
+  Grid,
   Typography,
 } from "@mui/material";
 import FilmDetail from "./FilmDetail";
@@ -29,22 +30,24 @@ function FilmPresentation({ films }) {
 
   return (
     <Container>
-      <Box className={"card-list " + theme}>
+      <Grid container className={theme} spacing={{ md: "2rem", xs: "2.5rem" }}>
         {films.map((film) => (
-          <Card className='card' key={film.id}>
-            <CardActionArea
-              onClick={() => {
-                handleClick(), setFilmDetail(film);
-              }}
-            >
-              <CardMedia component='img' image={film.img} />
-              <Box className='film-title'>
-                <Typography variant='h5'>{film.title}</Typography>
-              </Box>
-            </CardActionArea>
-          </Card>
+          <Grid item md={4} xs={6}>
+            <Card className='card' key={film.id}>
+              <CardActionArea
+                onClick={() => {
+                  handleClick(), setFilmDetail(film);
+                }}
+              >
+                <CardMedia component='img' image={film.img} />
+                <Box className='film-title'>
+                  <Typography variant='h5'>{film.title}</Typography>
+                </Box>
+              </CardActionArea>
+            </Card>
+          </Grid>
         ))}
-      </Box>
+      </Grid>
       {openModal && (
         <FilmDetail
           open={openModal}

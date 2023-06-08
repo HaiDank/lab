@@ -27,11 +27,12 @@ body {
 
 .dark {
   color: #eee;
-  background-color: #222;
+  background-color: #151515;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 a:visited {

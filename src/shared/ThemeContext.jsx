@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const ThemeContext = React.createContext();
 
-const ThemeProvider = ({ children }) => {
+const Theme = ({ children }) => {
   //false = light, true = dark
   const [isDark, setIsDark] = useState(false);
   const [theme, setTheme] = useState("light");
@@ -33,4 +33,4 @@ const ThemeProvider = ({ children }) => {
   );
 };
 
-export { ThemeProvider, ThemeContext };
+export { Theme, ThemeContext };

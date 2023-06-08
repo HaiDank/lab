@@ -26,10 +26,21 @@ function Header() {
     <>
       <AppBar
         position='static'
-        sx={{ boxShadow: "none", marginBottom: "1rem" }}
+        sx={{
+          boxShadow: "none",
+          marginBottom: "1rem",
+        }}
       >
-        <Toolbar className={theme}>
-          <Button color='inherit' sx={{ justifyContent: "start" }}>
+        <Toolbar
+          className={theme}
+          sx={{
+            borderBottom: "1px solid",
+          }}
+        >
+          <Button
+            color='inherit'
+            sx={{ justifyContent: "start", textTransform: "none" }}
+          >
             <Link to='/'>
               <Typography component='div' variant='h3'>
                 Lab 4
@@ -38,18 +49,24 @@ function Header() {
           </Button>
           <Box sx={{ flexGrow: "1" }} />
           <Stack direction='row' spacing={2} sx={{ width: "auto" }}>
-            <Button color='inherit'>
-              <InfoOutlinedIcon />
-              <Link to='/about'> About</Link>
-            </Button>
-            <Button color='inherit'>
-              <ContactPageOutlinedIcon />
-              <Link to='/contact'>Contact</Link>
-            </Button>
-            <Button color='inherit'>
-              <ArticleOutlinedIcon />
-              <Link to='/news'>News</Link>
-            </Button>
+            <Link to='/about'>
+              <Button color='inherit'>
+                <InfoOutlinedIcon />
+                <Typography variant='button'>About</Typography>
+              </Button>
+            </Link>
+            <Link to='/contact'>
+              <Button color='inherit'>
+                <ContactPageOutlinedIcon />
+                <Typography variant='button'>Contact</Typography>
+              </Button>
+            </Link>
+            <Link to='/news'>
+              <Button color='inherit'>
+                <ArticleOutlinedIcon />
+                <Typography variant='button'>News</Typography>
+              </Button>
+            </Link>
             <Switch
               checked={isDark}
               onChange={handleToggle}

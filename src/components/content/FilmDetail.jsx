@@ -1,14 +1,15 @@
 import {
   Box,
+  Button,
   Dialog,
+  DialogActions,
   DialogContent,
-  IconButton,
-  Stack,
+  FormLabel,
+  Grid,
   Typography,
 } from "@mui/material";
 import React from "react";
 import "./filmDetail.css";
-import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 
 function FilmDetail({ open, filmDetail, onClose }) {
   return (
@@ -19,10 +20,8 @@ function FilmDetail({ open, filmDetail, onClose }) {
         fullWidth
         maxWidth='md'
         scroll='body'
-        // sx={{ overflowY: "scroll" }}
         PaperProps={{
           sx: {
-            backgroundColor: "#121212",
             margin: "0",
             top: "1em",
             width: "100%",
@@ -50,6 +49,27 @@ function FilmDetail({ open, filmDetail, onClose }) {
               height: "auto",
             }}
           >
+            <DialogActions
+              sx={{
+                zIndex: "1000",
+                position: "absolute",
+                top: "0.75rem",
+                right: "0.75rem",
+              }}
+            >
+              <Button
+                onClick={onClose}
+                sx={{
+                  borderRadius: "50%",
+                  aspectRatio: "1/1",
+                  bgcolor: "rgba(200,200,200,0.1)",
+                }}
+              >
+                <Typography variant='h6' color='white' fontWeight='bold'>
+                  &times;
+                </Typography>
+              </Button>
+            </DialogActions>
             <div className='film-title'>
               <Typography
                 variant='h3'
@@ -73,22 +93,38 @@ function FilmDetail({ open, filmDetail, onClose }) {
             />
           </Box>
 
-          {/* <IconButton className='play-btn'>
-            <PlayCircleOutlineIcon
-              sx={{ fontSize: 40 }}
-              style={{ color: "red" }}
-            />
-          </IconButton> */}
-
-          <Box className='film-info'>
-            <p>Year: {filmDetail.year}</p>
-            <p>Nation: {filmDetail.nation}</p>
-            <p>Nation: {filmDetail.nation}</p>
-            <p>Nation: {filmDetail.nation}</p>
-            <p>Nation: {filmDetail.nation}</p>
-            <p>Nation: {filmDetail.nation}</p>
-            <p>Nation: {filmDetail.nation}</p>
-            <p>Nation: {filmDetail.nation}</p>
+          <Box padding='2rem 2rem'>
+            <Grid container wrap='nowrap' spacing='2rem'>
+              <Grid item xs='8'>
+                <Typography variant='subtile2' display='block' mb={2}>
+                  {filmDetail.year} {filmDetail.duration}
+                </Typography>
+                <FormLabel>
+                  <Typography variant='h5'>Description</Typography>
+                </FormLabel>
+                <Typography variant='body1'>
+                  {filmDetail.description}
+                </Typography>
+              </Grid>
+              <Grid item xs='4'>
+                <Grid>
+                  <FormLabel>
+                    <Typography variant='subtile2'>Director: </Typography>
+                  </FormLabel>
+                  <Typography variant='subtile2'>
+                    {filmDetail.directors}
+                  </Typography>
+                </Grid>
+                <Grid>
+                  <FormLabel>
+                    <Typography variant='subtile2'>Actors: </Typography>
+                  </FormLabel>
+                  <Typography variant='subtile2'>
+                    {filmDetail.actors}
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
           </Box>
         </DialogContent>
       </Dialog>
