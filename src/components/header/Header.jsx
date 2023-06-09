@@ -42,50 +42,48 @@ function Header() {
             sx={{ justifyContent: "start", textTransform: "none" }}
           >
             <Link to='/'>
-              <Typography component='div' variant='h3'>
-                Lab 4
-              </Typography>
+              <Typography variant='h4'>Lab 4</Typography>
             </Link>
           </Button>
           <Box sx={{ flexGrow: "1" }} />
-          <Stack direction='row' spacing={2} sx={{ width: "auto" }}>
+          <Stack direction='row' spacing={{ xs: 0, md: 2 }}>
             <Link to='/about'>
               <Button color='inherit'>
                 <InfoOutlinedIcon />
-                <Typography variant='button'>About</Typography>
+                <Typography
+                  variant='button'
+                  display={{ xs: "none", md: "block" }}
+                >
+                  About
+                </Typography>
               </Button>
             </Link>
             <Link to='/contact'>
               <Button color='inherit'>
                 <ContactPageOutlinedIcon />
-                <Typography variant='button'>Contact</Typography>
+                <Typography
+                  variant='button'
+                  display={{ xs: "none", md: "block" }}
+                >
+                  Contact
+                </Typography>
               </Button>
             </Link>
             <Link to='/news'>
               <Button color='inherit'>
                 <ArticleOutlinedIcon />
-                <Typography variant='button'>News</Typography>
+                <Typography
+                  variant='button'
+                  display={{ xs: "none", md: "block" }}
+                >
+                  News
+                </Typography>
               </Button>
             </Link>
-            <Switch
-              checked={isDark}
-              onChange={handleToggle}
-              sx={{ ml: "auto!important" }}
-            />
+            <Switch checked={isDark} onChange={handleToggle} />
           </Stack>
         </Toolbar>
       </AppBar>
-
-      {/* <nav className={"nav " + theme}>
-      <Link to='/' className='site-title'>
-        Lab 1
-      </Link>
-      <ul></ul>
-      <FormControlLabel
-        label=''
-        control={<Switch checked={isDark} onChange={handleToggle} />}
-      />
-    </nav> */}
     </>
   );
 }

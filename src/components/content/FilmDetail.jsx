@@ -70,7 +70,7 @@ function FilmDetail({ open, filmDetail, onClose }) {
                 </Typography>
               </Button>
             </DialogActions>
-            <div className='film-title'>
+            <Box className='detail-film-title'>
               <Typography
                 variant='h3'
                 color='white'
@@ -78,11 +78,12 @@ function FilmDetail({ open, filmDetail, onClose }) {
                   position: "absolute",
                   bottom: "30%",
                   left: "7%",
+                  width: "50%",
                 }}
               >
                 {filmDetail.title}
               </Typography>
-            </div>
+            </Box>
 
             <iframe
               className='film-trailer'

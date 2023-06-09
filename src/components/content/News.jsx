@@ -7,6 +7,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 import React from "react";
 
 function News() {
@@ -25,9 +26,13 @@ function News() {
         >
           <Grid item>
             <Card>
-              <CardActionArea>
+              <CardActionArea component={Link} to='1'>
                 <CardMedia component='img' image='./assets/images/news1.avif' />
-                <Box className='film-title'>
+                <Box
+                  className='film-title'
+                  justifyContent='start'
+                  height='auto'
+                >
                   <Typography variant='h5'>
                     ‘Spider-Man: Across the Spider-Verse’: Does Marvel Need One
                     Set of Multiverse Rules?
@@ -43,9 +48,13 @@ function News() {
                 height: "100%",
               }}
             >
-              <CardActionArea>
+              <CardActionArea component={Link} to='2'>
                 <CardMedia component='img' image='./assets/images/news2.avif' />
-                <Box className='film-title'>
+                <Box
+                  className='film-title'
+                  justifyContent='start'
+                  height='auto'
+                >
                   <Typography variant='h5'>
                     This Is the Key to the Perfect Multiverse Movie
                   </Typography>
@@ -69,13 +78,21 @@ function News() {
                 height: "100%",
               }}
             >
-              <CardActionArea sx={{ height: "100%", width: "100%" }}>
+              <CardActionArea
+                sx={{ height: "100%", width: "100%" }}
+                component={Link}
+                to='3'
+              >
                 <CardMedia
                   sx={{ objectFit: "cover", height: "100%", width: "100%" }}
                   component='img'
                   image='./assets/images/news3.avif'
                 />
-                <Box className='film-title' height='auto'>
+                <Box
+                  className='film-title'
+                  height='auto'
+                  justifyContent='start'
+                >
                   <Typography variant='h5'>
                     Here's Where You Know the Voice of 'Across the
                     Spider-Verse's George Stacy From
@@ -91,13 +108,21 @@ function News() {
                 height: "100%",
               }}
             >
-              <CardActionArea sx={{ height: "100%", width: "100%" }}>
+              <CardActionArea
+                sx={{ height: "100%", width: "100%" }}
+                component={Link}
+                to='4'
+              >
                 <CardMedia
                   sx={{ objectFit: "cover", height: "100%", width: "100%" }}
                   component='img'
                   image='./assets/images/news4.avif'
                 />
-                <Box className='film-title' height='auto'>
+                <Box
+                  className='film-title'
+                  height='auto'
+                  justifyContent='start'
+                >
                   <Typography variant='h5'>
                     10 Movies With Similar Animation Styles to ‘Spider-Man:
                     Across the Spider-Verse’
@@ -113,13 +138,21 @@ function News() {
                 height: "100%",
               }}
             >
-              <CardActionArea sx={{ height: "100%", width: "100%" }}>
+              <CardActionArea
+                sx={{ height: "100%", width: "100%" }}
+                component={Link}
+                to='5'
+              >
                 <CardMedia
                   sx={{ objectFit: "cover", height: "100%", width: "100%" }}
                   component='img'
                   image='./assets/images/news5.avif'
                 />
-                <Box className='film-title' height='auto'>
+                <Box
+                  className='film-title'
+                  height='auto'
+                  justifyContent='start'
+                >
                   <Typography variant='h5'>
                     Spider-Woman Actor Hailee Steinfeld Dresses Up As
                     Spider-Verse's Gwen Stacy
