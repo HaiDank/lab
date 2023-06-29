@@ -4,6 +4,7 @@ import {
   AccordionSummary,
   Box,
   Container,
+  Grid,
   Stack,
   Typography,
 } from "@mui/material";
@@ -15,59 +16,80 @@ import React from "react";
 
 function About() {
   return (
-    <Container>
-      <Stack
-        textAlign='center'
-        m='2rem'
-        borderBottom='2px solid transparent'
-        paddingBottom='1.2rem'
-        sx={{
-          borderImage:
-            "linear-gradient(to right, transparent, mediumslateblue, transparent)",
-          borderImageSlice: "1",
-        }}
+    <Container
+      sx={{
+        margin: "auto",
+        minHeight: "80vh",
+        display: "flex",
+      }}
+    >
+      <Grid
+        container
+        justifyContent='center'
+        alignItems='center'
+        spacing={{ xs: 2, sm: 4 }}
       >
-        <Typography variant='h2'>About us</Typography>
-        <Typography variant='body1'>Learn more about us</Typography>
-      </Stack>
+        <Grid item xs={12} md={4}>
+          <Stack
+            textAlign='center'
+            m='2rem'
+            borderBottom='2px solid transparent'
+            paddingBottom='1.2rem'
+            sx={{
+              borderImage:
+                "linear-gradient(to right, transparent, mediumslateblue, transparent)",
+              borderImageSlice: "1",
+            }}
+          >
+            <Typography variant='h2'>About us</Typography>
+            <Typography variant='body1'>Learn more about us</Typography>
+          </Stack>
+        </Grid>
 
-      <Accordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Stack direction='row' alignItems='center' gap={2}>
-            <WebIcon fontSize='medium' />
-            <Typography variant='h6'>What is this?</Typography>
-          </Stack>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            This is a personal project for a course in a university in Vietnam.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />} textAlign='center'>
-          <Stack direction='row' alignItems='center' gap={2}>
-            <PeopleIcon fontSize='medium' />
-            <Typography variant='h6'>Who are we?</Typography>
-          </Stack>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            I am a student currently studying in said university.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Stack direction='row' alignItems='center' gap={2}>
-            <FmdGoodIcon fontSize='medium' />
-            <Typography variant='h6'>Where can you find us?</Typography>
-          </Stack>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>Ho Chi Minh city Vietnam</Typography>
-        </AccordionDetails>
-      </Accordion>
+        <Grid item xs={12} md={8}>
+          <Accordion>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Stack direction='row' alignItems='center' gap={2}>
+                <WebIcon fontSize='medium' />
+                <Typography variant='h6'>What is this?</Typography>
+              </Stack>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                This is a personal project for a course in a university in
+                Vietnam.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              textAlign='center'
+            >
+              <Stack direction='row' alignItems='center' gap={2}>
+                <PeopleIcon fontSize='medium' />
+                <Typography variant='h6'>Who are we?</Typography>
+              </Stack>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                I am a student currently studying in said university.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Stack direction='row' alignItems='center' gap={2}>
+                <FmdGoodIcon fontSize='medium' />
+                <Typography variant='h6'>Where can you find us?</Typography>
+              </Stack>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>Ho Chi Minh city Vietnam</Typography>
+            </AccordionDetails>
+          </Accordion>
+        </Grid>
+      </Grid>
     </Container>
   );
 }

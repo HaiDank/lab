@@ -1,9 +1,9 @@
 * {
-  transition-property: all;
+  transition-property: color, background-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 100ms;
-  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
-    sans-serif;
+  font-family: Montserrat, Netflix Sans, Helvetica Neue, Segoe UI, Roboto,
+    Ubuntu, sans-serif;
 }
 
 body {

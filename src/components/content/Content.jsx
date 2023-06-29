@@ -1,15 +1,13 @@
-import React from 'react'
-import { Films } from '../../shared/ListOfFilms'
-import FilmPresentation from './FilmPresentation'
-import './content.css'
+import React from 'react';
+import { Films } from '../../shared/ListOfFilms';
+import FilmPresentation from './FilmPresentation';
+import './content.css';
+import useFetch from '../../shared/useFetch';
 
 function Content() {
+	const films = useFetch();
 
-    const films = Films
-
-    return (
-        <FilmPresentation films={films} />
-    )
+	return <FilmPresentation films={films} />;
 }
 
-export default Content
+export default Content;

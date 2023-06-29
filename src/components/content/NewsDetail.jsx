@@ -18,7 +18,17 @@ function NewsDetail() {
         />
       </Box>
       <Box mb={2}>
-        <Typography variant='h3'>{newsItem.title}</Typography>
+        <Typography
+          variant='h3'
+          sx={{
+            borderBottom: "2px solid transparent",
+            borderImage:
+              "linear-gradient(to right, transparent, mediumslateblue, transparent)",
+            borderImageSlice: "1",
+          }}
+        >
+          {newsItem.title}
+        </Typography>
       </Box>
       <Box mb={2}>
         <Typography variant='body1'>{newsItem.news}</Typography>
