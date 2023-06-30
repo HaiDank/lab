@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DataTable from './DataTable';
 import {
 	Paper,
@@ -8,13 +8,14 @@ import {
 	Button,
 	Modal,
 } from '@mui/material';
-import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
-import useFetch from '../../shared/useFetch';
+import { useFetch } from '../../shared/useFetch';
 import TableAction from './TableAction';
 import AddIcon from '@mui/icons-material/Add';
 import CreateFilm from './CreateFilm';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchFilms } from '../../shared/FilmReducer';
 
-const columns: GridColDef[] = [
+const columns = [
 	{ field: 'id', headerName: 'ID', width: 50 },
 	{
 		field: 'img',
@@ -22,9 +23,7 @@ const columns: GridColDef[] = [
 		width: 40,
 		sortable: false,
 		filterable: false,
-		renderCell: (params: GridRenderCellParams<any>) => (
-			<Avatar src={params.row.img} />
-		),
+		renderCell: (params) => <Avatar src={params.row.img} />,
 	},
 	{
 		field: 'title',
@@ -43,22 +42,25 @@ const columns: GridColDef[] = [
 		width: 80,
 		sortable: false,
 		filterable: false,
-		renderCell: (params: GridRenderCellParams<any>) => (
-			<TableAction film={params.row} />
-		),
+		renderCell: (params) => <TableAction film={params.row} />,
 	},
 ];
 
 function Dashboard() {
-	const [editFilm, setEditFilm] = useState(null);
-	const [openCreate, setOpenCreate] = useState<boolean>(false);
-	const rows = useFetch();
+	const [openCreate, setOpenCreate] = useState(false);
+	const dispatch = useDispatch();
+	const state = useSelector((state) => state);
+
+	useEffect(() => {
+		dispatch(fetchFilms());
+	}, []);
 
 	const handleClick = () => {
 		setOpenCreate(true);
 	};
 	const handleClose = () => {
 		setOpenCreate(false);
+		dispatch(fetchFilms());
 	};
 
 	return (
@@ -85,7 +87,7 @@ function Dashboard() {
 					</Button>
 				</Tooltip>
 
-				<DataTable columns={columns} rows={rows} />
+				<DataTable columns={columns} rows={state.films.data} />
 			</Paper>
 
 			<CreateFilm open={openCreate} onClose={handleClose} />

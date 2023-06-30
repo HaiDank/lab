@@ -14,6 +14,7 @@ import NewsDetail from './components/content/NewsDetail';
 import Dashboard from './components/dashboard/Dashboard';
 import Error from './error/Error';
 import EditFilm from './components/dashboard/EditFilm';
+import { Films } from './shared/ListOfFilms';
 
 function App() {
 	const { theme, isDark } = useContext(ThemeContext);
@@ -40,13 +41,12 @@ function App() {
 					<Route path='/news' element={<News />}></Route>
 					<Route path='news/:id' element={<NewsDetail />}></Route>
 					<Route path='/about' element={<About />}></Route>
-					{userContext?.user?.email == 'dangvnhse170225@fpt.edu.vn' ? (
+					<Route path='*' element={<Error />}></Route>
+					{userContext?.user && (
 						<>
 							<Route path='/dashboard' element={<Dashboard />}></Route>
 							<Route path='/editFilm/:id' element={<EditFilm />}></Route>
 						</>
-					) : (
-						<Route path='/dashboard' element={<Error />}></Route>
 					)}
 				</Routes>
 

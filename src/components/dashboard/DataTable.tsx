@@ -2,7 +2,7 @@ import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 import React from 'react';
 
-interface filmRow {
+export interface filmRow {
 	id: number;
 	img: string;
 	title: string;
