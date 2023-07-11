@@ -16,29 +16,21 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import React, { useState } from 'react';
 import { Close } from '@mui/icons-material';
-import { TransitionProps } from '@mui/material/transitions';
-import { useDispatch } from 'react-redux';
 
-const Transition = React.forwardRef(function Transition(
-	props: TransitionProps & {
-		children: React.ReactElement;
-	},
-	ref: React.Ref<unknown>
-) {
+import { useDispatch } from 'react-redux';
+import { fetchFilms } from '../../shared/FilmReducer';
+
+const Transition = React.forwardRef(function Transition(props, ref) {
 	return <Slide direction='up' ref={ref} {...props} />;
 });
 
-type CreateFilmProps = {
-	open: boolean;
-	onClose: Function;
-};
-
 const BASEURL = 'https://649be96a0480757192371ca9.mockapi.io/api/v1/films/film';
 
-function CreateFilm(props: CreateFilmProps) {
+function CreateFilm(props) {
 	const dispatch = useDispatch();
 	const formik = useFormik({
 		initialValues: {
+			img: '',
 			title: '',
 			year: '',
 			nation: '',
@@ -47,7 +39,7 @@ function CreateFilm(props: CreateFilmProps) {
 			directors: '',
 			description: '',
 			trailer: '',
-			img: '',
+			
 		},
 		onSubmit: (values) => {
 			fetch(BASEURL, {
@@ -110,6 +102,7 @@ function CreateFilm(props: CreateFilmProps) {
 	function handleSave() {
 		handleClose();
 		setOpenAlert(true);
+		dispatch(fetchFilms());
 	}
 
 	return (

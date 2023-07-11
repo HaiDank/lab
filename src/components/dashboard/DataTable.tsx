@@ -32,7 +32,6 @@ function DataTable({ columns, rows }: DataTableProps) {
 					},
 				}}
 				pageSizeOptions={[5, 10, 15, 20]}
-				checkboxSelection
 			/>
 		</>
 	);
